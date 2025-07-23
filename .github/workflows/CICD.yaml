@@ -2,7 +2,7 @@ name: CICD Workflow for Feedback Application
 run-name: CICD workflow Trigger by ${{ github.event_name}} by ${{ github.actor }}
 
 on: 
-  Pull Request:
+  Pull-Request:
     branches: 
       - main
   push: 

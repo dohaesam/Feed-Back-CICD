@@ -81,7 +81,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./src/feedback_frontend/src
+          context: ./src/feedback_frontend
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/feedbackfrontend:${{ github.run_id}}
 

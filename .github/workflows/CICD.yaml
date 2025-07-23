@@ -4,10 +4,10 @@ run-name: CICD workflow Trigger by ${{ github.event_name}} by ${{ github.actor }
 on: 
   pull_request:
     branches: 
-      - main
+      - master
   push: 
     branches:
-      - main
+      - master
   
   workflow_dispatch:
 

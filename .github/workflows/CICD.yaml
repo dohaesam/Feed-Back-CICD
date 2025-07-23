@@ -2,7 +2,7 @@ name: CICD Workflow for Feedback Application
 run-name: CICD workflow Trigger by ${{ github.event_name}} by ${{ github.actor }}
 
 on: 
-  Pull_Request:
+  Pull_request:
     branches: 
       - main
   push: 
@@ -12,13 +12,12 @@ on:
   Workflow_dispatch:
 
 
-  
 jobs:
   CI-Python:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
 
       - name: set up Python
         uses: actions/setup-python@v5

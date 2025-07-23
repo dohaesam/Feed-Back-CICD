@@ -40,7 +40,7 @@ jobs:
         working-directory: ./src/feedback_backend
         run: |
           pip install pytest
-          pytest ../../tests
+          pytest 
   
 
   

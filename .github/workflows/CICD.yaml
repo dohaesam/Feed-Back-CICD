@@ -69,3 +69,19 @@ jobs:
         context: ./src/feedback_frontend
         push: true
         tags: bagato220/feedbackfrontend:${{ github.run_number }}
+  
+  CD-Deploy-Overeks:
+    runs-on: ubuntu-latest
+    needs:
+      - CI-Backend
+      - CI-Frontend
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v4
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt remove awscli -y
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install

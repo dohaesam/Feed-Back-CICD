@@ -33,6 +33,6 @@ jobs:
       - name: Testing 
         run: | 
           pip install pytest
-          PYTHONPATH= ./src/. pytest ./tests
+          PYTHONPATH=./src pytest 
 
 

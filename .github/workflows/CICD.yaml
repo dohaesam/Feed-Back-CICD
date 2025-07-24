@@ -105,6 +105,11 @@ jobs:
           sed -i 's/bagato220\/feedbackapp:.*/bagato220\/feedbackapp:'"${{ github.run_number }}"'/g' k8s/backend-deployment.yaml
           sed -i 's/bagato220\/feedbackfrontend:.*/bagato220\/feedbackfrontend:'"${{ github.run_number }}"'/g' k8s/frontend-deployment.yaml
 
+      - name: Install Kubectl 
+        run: |
+          curl -LO https://dl.k8s.io/release/v1.33.0/bin/linux/amd64/kubectl
+          sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+          
       - name: Apply The Configuration 
         run: |
           kubectl apply -f k8s/*.yaml

@@ -91,3 +91,20 @@ jobs:
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set default.region us-east-1
+
+      - name: Check Auth
+        run: |
+          aws sts get-caller-identity
+
+      - name: Authencation with cluster
+        run: |
+          aws eks update-kubeconfig --name ToDoCluster --region us-east-1
+
+      - name: Change the tags
+        run: | 
+          sed -i 's/bagato220\/feedbackapp:.*/bagato220\/feedbackapp:'"${{ github.run_number }}"'/g' k8s/backend-deployment.yaml
+          sed -i 's/bagato220\/feedbackfrontend:.*/bagato220\/feedbackfrontend:'"${{ github.run_number }}"'/g' k8s/frontend-deployment.yaml
+
+      - name: Apply The Configuration 
+        run: |
+          kubectl apply -f k8s/*.yaml

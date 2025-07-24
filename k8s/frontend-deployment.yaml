@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: bagato220/feedback-frontend:81
+        image: bagato220/feedbackfrontend:81
         ports:
         - containerPort: 80
 ---

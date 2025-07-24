@@ -4,7 +4,7 @@ run-name: Deploy Feed Back by ${{ github.actor }} and Event is ${{ github.event_
 on: 
   push:
     branches:
-      - main
+      - master
     
 jobs:
   CI-Backend:

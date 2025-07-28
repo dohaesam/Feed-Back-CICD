@@ -172,3 +172,4 @@ npm start
 Pull requests and ideas welcome!  
 Star the repo if you found it useful ⭐
 Triggered after adding Docker secrets
+testing docker login again

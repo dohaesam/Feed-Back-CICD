@@ -52,7 +52,7 @@ jobs:
         with:
           context: ./src/feedback_backend
           push: true
-          tags: bagato220/feedbackapp:${{ github.run_number }}
+          tags: dohaesam005/feedbackapp:${{ github.run_number }}
 
   CI-Frontend:
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
       with:
         context: ./src/feedback_frontend
         push: true
-        tags: bagato220/feedbackfrontend:${{ github.run_number }}
+        tags: dohaesam005/feedbackfrontend:${{ github.run_number }}
   
   CD-Deploy-Overeks:
     runs-on: ubuntu-latest

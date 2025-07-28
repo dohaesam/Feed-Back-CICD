@@ -34,6 +34,8 @@ jobs:
         run: | 
           pip install pytest
           PYTHONPATH=./src pytest 
+      - name: Debug username
+        run: echo "Username is ${{ secrets.DOCKERHUB_USERNAME }}"
 
       - name: Docker Login
         uses: docker/login-action@v3

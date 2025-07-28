@@ -101,7 +101,7 @@ jobs:
 
       - name: Authencation with cluster
         run: |
-          aws eks update-kubeconfig --name ToDoCluster --region us-east-1
+          # aws eks update-kubeconfig --name ToDoCluster --region us-east-1
 
       - name: Change the tags
         run: | 
